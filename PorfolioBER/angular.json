@@ -28,8 +28,11 @@
             ],
             "styles": [
               "src/styles.css"
+              "PorfolioBER/node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "PorfolioBER/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
