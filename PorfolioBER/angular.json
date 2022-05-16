@@ -28,8 +28,10 @@
             ],
             "styles": [
               "src/styles.css"
+              "PorfolioBER/css/bootstrap.css"
             ],
             "scripts": [
+              "PorfolioBER/js/bootstrap.js"
             ]
           },
           "configurations": {
