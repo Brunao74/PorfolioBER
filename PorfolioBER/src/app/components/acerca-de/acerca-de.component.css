@@ -1,8 +1,14 @@
 div{
-    background-color: rgb(38, 71, 180);
+    background-color: beige;
     text-align: justify;
+    padding: 1%;
+}
+#fotoB{
+    max-width: 10%;
+    max-height: 10%;
 }
 #nombre{
     font-weight: bolder;
+    font-style: italic;
     margin-top: 10%;
 }

@@ -1,8 +1,8 @@
 .row{
-    padding: 30px;
+    padding: 50px;
 }
 div{
-    background-color: rgb(38, 71, 180);
+    background-color: tomato;
 }
 h1,h3 {
     display: inline;
