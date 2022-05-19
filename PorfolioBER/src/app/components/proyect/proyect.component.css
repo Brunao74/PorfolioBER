@@ -1,0 +1,15 @@
+.row{
+    padding: 50px;
+    background-color: beige;
+}
+.contenedor{
+    width: auto;
+}
+.parte1, .parte2{
+    display: inline-block;
+    text-align: justify;
+    padding: 15px;
+}
+.imgproy{
+    box-shadow: 10px 10px 10px rosybrown;
+}
