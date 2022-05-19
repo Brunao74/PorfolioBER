@@ -14,6 +14,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectComponent } from './components/proyect/proyect.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { IngresoComponent } from './components/ingreso/ingreso.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillsComponent,
     ProyectComponent,
     FooterComponent,
+    IngresoComponent,
   ],
   imports: [
     BrowserModule,
