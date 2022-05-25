@@ -15,6 +15,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectComponent } from './components/proyect/proyect.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { IngresoComponent } from './components/ingreso/ingreso.component';
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({ }),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
