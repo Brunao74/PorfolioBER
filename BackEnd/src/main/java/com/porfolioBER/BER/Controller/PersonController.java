@@ -58,7 +58,7 @@ public class PersonController {
         interfacepersonservice.savePerson(person);
         return person;
     }  
-    @GetMapping("personas/traer/perfil")
+    @GetMapping("/personas/traer/perfil")
     public Person findPerson(){
         return interfacepersonservice.findPerson((long)1);
     }
