@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 
-public class Persona {
+public class Persona{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
@@ -30,16 +30,4 @@ public class Persona {
     @Size(min = 1, max = 60)
     private String img;
 
-    public void setNombre(String nuevoNombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setApellido(String nuevoApellido) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setImg(String nuevoImg) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }
