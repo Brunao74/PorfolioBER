@@ -11,12 +11,11 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-
-public class Persona{
+public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
-    @Size(min = 1, max = 60)
+    @Size(min = 1, max = 30)
     private Long Id;
     
     @NotNull
@@ -27,7 +26,7 @@ public class Persona{
     @Size(min = 1, max = 60, message = "error")
     private String apellido;
     
-    @Size(min = 1, max = 60)
+    @Size(min = 1, max = 160)
     private String img;
 
 }
