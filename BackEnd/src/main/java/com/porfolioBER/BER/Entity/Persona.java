@@ -9,13 +9,12 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+
 @Entity
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
-    private Long Id;
+    private Long id;
     
     @NotNull
     @Size(min = 1, max = 60, message = "error")
@@ -31,13 +30,12 @@ public class Persona {
    @Size(min = 1, max = 160)
     private String titulo;
 
-
     public Long getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(Long Id) {
-        this.Id = Id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -71,6 +69,6 @@ public class Persona {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-   
-   
+
+ 
 }

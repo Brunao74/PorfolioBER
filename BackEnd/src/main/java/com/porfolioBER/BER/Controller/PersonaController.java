@@ -28,13 +28,13 @@ public class PersonaController {
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         interfacepersonaService.savePersona(persona);
-        return "Persona creada";
+        return "creado";
     }
     
-    @DeleteMapping("/personas/borrar/(id)")
+    @DeleteMapping("/personas/eliminar/(id)")
     public String deletePersona(@PathVariable Long id){
         interfacepersonaService.deletePersona(id);
-        return "Persona eliminada";
+        return "eliminado";
     }  
 
     @PutMapping("/personas/editar/(id)")
