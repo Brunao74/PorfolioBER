@@ -4,10 +4,20 @@
  */
 package com.porfolioBER.BER.Entity;
 
-/**
- *
- * @author bruno
- */
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Experiencia {
+    @Id
+    @GeneratedValue(strategy =)
+    private int id;
+    private String  nombreX;
+    private String descripcionX;
+    
+    
+    
+            
     
 }
