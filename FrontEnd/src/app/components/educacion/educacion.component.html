@@ -1,33 +1,38 @@
 <div class="row">
     <h1>Educacion
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+                Nueva Educacion
+            </button>
+        </div>
+
+        <div class="col lg 2"></div>
+        <div class="col-lg-10">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Educacion of educacion">
+                        <td *ngIf="isLogged">
+                            <button type="button" class="btn btn-success" routerLink="/editexp/{{Educacion.id}}" >EDITAR</button>
+                        </td>
+                        <td *ngIf="isLogged">
+                            <button type="button" class="btn btn-success" (click)="delete(Educacion.id)" >BORRAR</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li *ngFor="let Educacion of educacion">
+                    <h1>{{Educacion.titulo}}</h1>
+                    <h2>{{Educacion.institucion}}</h2>
+                    <h3>{{Educacion.anioinicio}}</h3> - <h3>{{Educacion.aniofin}}</h3>
+                </li>
+                <p *ngFor="let Educacion of expe">{{Educacion.descripcionE}}</p>
+            </ul>
+        </div>
+
+
         <div class="col-lg-11">
-            <ul>
-                <li>
-                    <h1>Titulo</h1>
-                    <h2>Instituto</h2>
-                    <h2>Nivel</h2>
-                    <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium consequatur corrupti porro laborum.</p>
-            </ul>
-            <ul>
-                <li>
-                    <h1>Titulo</h1>
-                    <h2>Instituto</h2>
-                    <h2>Nivel</h2>
-                    <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium consequatur corrupti porro laborum.</p>
-            </ul>
-            <ul>
-                <li>
-                    <h1>Titulo</h1>
-                    <h2>Instituto</h2>
-                    <h2>Nivel</h2>
-                    <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium consequatur corrupti porro laborum.</p>
-            </ul>
+           
         </div>
     </h1>
 </div>

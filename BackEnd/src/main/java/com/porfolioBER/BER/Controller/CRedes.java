@@ -41,19 +41,18 @@ public class CRedes {
         return new ResponseEntity(redes, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id) {
+    /* public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if (!sRedes.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
         sRedes.delete(id);
         return new ResponseEntity(new Mensaje("Eliminado"), HttpStatus.OK);
-    }
+    } */
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DTORedes dtoredes) {
-       
-        Redes redes = new Redes(dtoredes.getEmail() , dtoredes.getFacebook(), dtoredes.getGithub(), dtoredes.getLinkedin() );
+
+        Redes redes = new Redes(dtoredes.getEmail(), dtoredes.getFacebook(), dtoredes.getGithub(), dtoredes.getLinkedin());
         sRedes.save(redes);
 
         return new ResponseEntity(new Mensaje("Agregado"), HttpStatus.OK);
@@ -64,15 +63,15 @@ public class CRedes {
         if (!sRedes.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.BAD_REQUEST);
         }
-        
+
         Redes redes = sRedes.getOne(id).get();
         redes.setEmail(dtoredes.getEmail());
         redes.setFacebook(dtoredes.getFacebook());
         redes.setGithub(dtoredes.getGithub());
-        redes.setLinkedin(dtoredes.getLinkedin() );
+        redes.setLinkedin(dtoredes.getLinkedin());
 
         sRedes.save(redes);
         return new ResponseEntity(new Mensaje("Actualizado"), HttpStatus.OK);
 
-    } 
+    }
 }

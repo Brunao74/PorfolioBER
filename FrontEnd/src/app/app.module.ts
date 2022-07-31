@@ -21,7 +21,12 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
-import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { EditExperienciaComponent } from "./components/experiencia/EditExperienciaComponent";
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { NewskillsComponent } from './components/skills/newskills.component';
+import { NewredesComponent } from './components/socialmedia/newredes.component';
+import { NewracercadeComponent } from './components/acerca-de/newracercade.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
     LoginComponent,
     RegisterComponent,
     NewExperienciaComponent,
-    EditExperienciaComponent
+    EditExperienciaComponent,
+    NeweducacionComponent,
+    NewskillsComponent,
+    NewredesComponent,
+    NewracercadeComponent,
+    EditeducacionComponent
   ],
   imports: [
     BrowserModule,

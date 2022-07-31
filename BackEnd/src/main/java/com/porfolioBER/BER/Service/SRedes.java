@@ -27,10 +27,12 @@ public class SRedes {
         rRedes.save(red);
     }
 
-    public void deletePersona(Long id) {
+    public void delete(Long id) {
         rRedes.deleteById(id);
     }
+    
     public boolean existsById(int id) {
         return rRedes.existsById(id);
     }
+
 }
