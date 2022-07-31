@@ -1,9 +1,9 @@
 package com.porfolioBER.BER.Controller;
 
-import com.porfolioBER.BER.Entity.Experiencia;
-import com.porfolioBER.BER.Service.SExperiencia;
-import com.porfolioBER.BER.DTO.DTOExperiencia;
+import com.porfolioBER.BER.DTO.DTOProyect;
+import com.porfolioBER.BER.Entity.Proyect;
 import com.porfolioBER.BER.Security.Controller.Mensaje;
+import com.porfolioBER.BER.Service.SProyect;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,73 +22,69 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/explab")
 @CrossOrigin(origins = "http://localhost:4200")
-public class CExperiencia {
+public class CProyect {
 
     @Autowired
-    SExperiencia sExperiencia;
+    SProyect sProyect;
 
     @GetMapping("/lista")
-    public ResponseEntity<List<Experiencia>> list() {
-        List<Experiencia> list = sExperiencia.list();
+    public ResponseEntity<List<Proyect>> list() {
+        List<Proyect> list = sProyect.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id) {
-        if (!sExperiencia.existsById(id)) {
+    public ResponseEntity<Proyect> getById(@PathVariable("id") int id) {
+        if (!sProyect.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
-        Experiencia experiencia = sExperiencia.getOne(id).get();
-        return new ResponseEntity(experiencia, HttpStatus.OK);
+        Proyect proyect = sProyect.getOne(id).get();
+        return new ResponseEntity(proyect, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!sExperiencia.existsById(id)) {
+        if (!sProyect.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         }
-        sExperiencia.delete(id);
+        sProyect.delete(id);
         return new ResponseEntity(new Mensaje("Eliminado"), HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody DTOExperiencia dtoexp) {
-        if (StringUtils.isBlank(dtoexp.getEmpresa())) {
+    public ResponseEntity<?> create(@RequestBody DTOProyect dtoproyect) {
+        if (StringUtils.isBlank(dtoproyect.getNombreP())) {
             return new ResponseEntity(new Mensaje("Falta nombre"), HttpStatus.BAD_REQUEST);
         }
-        if (sExperiencia.existsByEmpresa(dtoexp.getEmpresa())) {
+        if (sProyect.existsByNombreP(dtoproyect.getNombreP())) {
             return new ResponseEntity(new Mensaje("Ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Experiencia experiencia = new Experiencia(dtoexp.getEmpresa(), dtoexp.getDescripcionX(), dtoexp.getAniofin(), dtoexp.getAnioinicio(),
-                 dtoexp.getCargo());
-        sExperiencia.save(experiencia);
+        Proyect proyect = new Proyect(dtoproyect.getNombreP(), dtoproyect.getDescripcionP(), dtoproyect.getImagenP());
+        sProyect.save(proyect);
 
         return new ResponseEntity(new Mensaje("Agregado"), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DTOExperiencia dtoexp) {
-        if (!sExperiencia.existsById(id)) {
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DTOProyect dtoproyect) {
+        if (!sProyect.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.BAD_REQUEST);
         }
-        if (sExperiencia.existsByEmpresa(dtoexp.getEmpresa()) && sExperiencia.getByEmpresa(dtoexp.getEmpresa()).get().getId() != id) {
+        if (sProyect.existsByNombreP(dtoproyect.getNombreP()) && sProyect.getByNombreP(dtoproyect.getNombreP()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if (StringUtils.isBlank(dtoexp.getEmpresa())) {
+        if (StringUtils.isBlank(dtoproyect.getNombreP())) {
             return new ResponseEntity(new Mensaje("Falta nombre"), HttpStatus.BAD_REQUEST);
         }
 
-        Experiencia experiencia = sExperiencia.getOne(id).get();
-        experiencia.setEmpresa(dtoexp.getEmpresa());
-        experiencia.setDescripcionX((dtoexp.getDescripcionX()));
-        experiencia.setAniofin(dtoexp.getAniofin() );
-        experiencia.setAnioinicio(dtoexp.getAnioinicio());
-        experiencia.setCargo(dtoexp.getCargo());
-        
+        Proyect proyect = sProyect.getOne(id).get();
+        proyect.setNombreP(dtoproyect.getNombreP());
+        proyect.setDescripcionP((dtoproyect.getDescripcionP()));
+        proyect.setImagenP(dtoproyect.getImagenP());
 
-        sExperiencia.save(experiencia);
+        sProyect.save(proyect);
         return new ResponseEntity(new Mensaje("Actualizado"), HttpStatus.OK);
 
-    }
+    } 
 }

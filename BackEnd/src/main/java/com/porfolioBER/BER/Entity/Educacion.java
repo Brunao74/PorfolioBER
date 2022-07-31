@@ -6,26 +6,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Experiencia {
+public class Educacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String empresa;
-    private String cargo;
+    private String titulo;
+    private String instituto;
     private String anioinicio;
     private String aniofin;
-    private String descripcionX;
+    private String descripcionE;
 
-    public Experiencia() {
+    public Educacion() {
     }
 
-    public Experiencia(String empresa, String cargo, String anioinicio, String aniofin, String descripcionX) {
-        this.empresa = empresa;
-        this.cargo = cargo;
+    public Educacion(String titulo, String instituto, String anioinicio, String aniofin, String descripcionE) {
+        this.titulo = titulo;
+        this.instituto = instituto;
         this.anioinicio = anioinicio;
         this.aniofin = aniofin;
-        this.descripcionX = descripcionX;
+        this.descripcionE = descripcionE;
     }
 
     public int getId() {
@@ -36,20 +36,20 @@ public class Experiencia {
         this.id = id;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getInstituto() {
+        return instituto;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setInstituto(String instituto) {
+        this.instituto = instituto;
     }
 
     public String getAnioinicio() {
@@ -68,13 +68,12 @@ public class Experiencia {
         this.aniofin = aniofin;
     }
 
-    public String getDescripcionX() {
-        return descripcionX;
+    public String getDescripcionE() {
+        return descripcionE;
     }
 
-    public void setDescripcionX(String descripcionX) {
-        this.descripcionX = descripcionX;
+    public void setDescripcionE(String descripcionE) {
+        this.descripcionE = descripcionE;
     }
 
-    
 }

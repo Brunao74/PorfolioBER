@@ -3,7 +3,7 @@ package com.porfolioBER.BER.Interface;
 import com.porfolioBER.BER.Entity.Persona;
 import java.util.List;
 
-public interface InterfacePersonaService {
+public interface IPersona {
 
     public List<Persona> getPersona();
 

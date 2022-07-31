@@ -7,7 +7,6 @@ public class DTOExperiencia {
     private String empresa;
     @NotBlank
     private String cargo;
-    private String tipo;
     private String anioinicio;
     private String aniofin;
     @NotBlank
@@ -16,16 +15,15 @@ public class DTOExperiencia {
     public DTOExperiencia() {
     }
 
-    public DTOExperiencia(String empresa, String cargo, String tipo, String anioinicio, String aniofin, String descripcionX) {
+    public DTOExperiencia(String empresa, String cargo, String anioinicio, String aniofin, String descripcionX) {
         this.empresa = empresa;
         this.cargo = cargo;
-        this.tipo = tipo;
         this.anioinicio = anioinicio;
         this.aniofin = aniofin;
         this.descripcionX = descripcionX;
     }
 
-    public String getEmpresa() {
+       public String getEmpresa() {
         return empresa;
     }
 
@@ -39,14 +37,6 @@ public class DTOExperiencia {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getAnioinicio() {
@@ -72,6 +62,7 @@ public class DTOExperiencia {
     public void setDescripcionX(String descripcionX) {
         this.descripcionX = descripcionX;
     }
-    
+
+   
 }
     

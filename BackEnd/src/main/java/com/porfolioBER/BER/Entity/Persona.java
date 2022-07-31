@@ -37,6 +37,14 @@ public class Persona {
         return id;
     }
 
+    public Persona(String nombre, String apellido, String img, String titulo, String nacion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.img = img;
+        this.titulo = titulo;
+        this.nacion = nacion;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -76,5 +84,4 @@ public class Persona {
     public void setNacion(String nacion) {
         this.nacion = nacion;
     }
-
 }

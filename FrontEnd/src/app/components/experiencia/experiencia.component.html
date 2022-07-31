@@ -1,37 +1,39 @@
 <div class="row">
     <h1>Experiencia Laboral
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+                Nueva Experiencia
+            </button>
+        </div>
+
+        <div class="col lg 2"></div>
+        <div class="col-lg-10">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Experiencia of expe">
+                        <td *ngIf="isLogged">
+                            <button type="button" class="btn btn-success" routerLink="/editexp/{{Experiencia.id}}" >EDITAR</button>
+                        </td>
+                        <td *ngIf="isLogged">
+                            <button type="button" class="btn btn-success" (click)="delete(Experiencia.id)" >BORRAR</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li *ngFor="let Experiencia of expe">
+                    <h1>{{Experiencia.empresa}}</h1>
+                    <h2>{{Experiencia.cargo}}</h2>
+                    <h2>{{Experiencia.tipo}}</h2>
+                    <h3>{{Experiencia.anioinicio}}</h3> - <h3>{{Experiencia.aniofin}}</h3>
+                </li>
+                <p *ngFor="let Experiencia of expe">{{Experiencia.descripcionX}}</p>
+            </ul>
+        </div>
+
+
         <div class="col-lg-11">
-            <ul>
-                <li>
-                    <h1>Trabajo</h1>
-                    <h2>Empresa</h2>
-                    <h2>Tipo</h2> <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi
-                    impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium
-                    consequatur corrupti porro laborum.</p>
-            </ul>
-            <ul>
-                <li>
-                    <h1>Trabajo</h1><h2>Tipo</h2>
-                    <h2>Empresa</h2>
-                                        <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi
-                    impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium
-                    consequatur corrupti porro laborum.</p>
-            </ul>
-            <ul>
-                <li>
-                    <h1>Trabajo</h1>
-                    <h2>Empresa</h2>
-                    <h2>Tipo</h2>
-                    <h3>(years)</h3> - <h3>(years)</h3>
-                </li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis tenetur, placeat dolore quasi
-                    impedit ipsum incidunt qui est ea, commodi nemo nesciunt officiis animi nostrum laudantium
-                    consequatur corrupti porro laborum.</p>
-            </ul>
+           
         </div>
     </h1>
 </div>
