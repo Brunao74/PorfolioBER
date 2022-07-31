@@ -44,7 +44,7 @@ import { RegisterComponent } from './components/register/register.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({ }),
+    NgCircleProgressModule.forRoot({}),
     HttpClientModule,
   ],
   providers: [],
