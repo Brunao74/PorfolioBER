@@ -1,1 +1,4 @@
-<button type="button" style="background-color:#ec8c9a; border-color: black; color: beige; font-style: italic;" (click)="login()" >INGRESO</button>
+<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+    <button type="button" class="btn btn-outlinen-dark" (click)="login()" *ngIf="!isLogged">INGRESO</button>
+    <button type="button" class="btn btn-outlinen-dark" (click)="onLogOut()" *ngIf="isLogged">SALIR</button>
+</div>

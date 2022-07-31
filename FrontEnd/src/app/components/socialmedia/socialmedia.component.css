@@ -1,3 +1,8 @@
 img{
     width: 50px;
 }
+div{
+    text-align: right;
+    text-decoration-color: white;
+    padding: 20px;
+}

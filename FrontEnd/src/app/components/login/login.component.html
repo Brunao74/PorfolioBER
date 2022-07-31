@@ -12,42 +12,29 @@
               <div class="card-body p-4 p-lg-5 text-black">
 
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-
-                  <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: tomato;"></i>
-                    <span class="h1 fw-bold mb-0">Mi Porfolio</span>
-                  </div>
-
                   <div class="form-outline mb-4">
                     <input type="text" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg"
-                      [(ngModel)]="nombreUsuario" required/>
+                      [(ngModel)]="nombreUsuario" required />
                     <label class="form-label" for="nombreUsuario">Usuario</label>
                   </div>
-
                   <div class="form-outline mb-4">
-                    <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="password"
-                      required />
+                    <input type="password" id="password" name="password" class="form-control form-control-lg"
+                      [(ngModel)]="password" required />
                     <label class="form-label" for="password">Contraseña</label>
                   </div>
-                  <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="submit">Entrar</button>
-                  </div>
-
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
                 </form>
 
                 <div class="pt-1 mb-4">
                   <a class="small text-muted">Bruno Rossi | 2022 | #ArgentinaPrograma</a>
                 </div>
-
                 <div class="pt-1 mb-4">
-                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                  <a href="mailto:brunoezerossi@gmail.com" class="small text-black">Reclamar problemas</a>
+                </div>
+                <div class="pt-1 mb-4">
                   <a href="/register" class="small text-black">Crear nueva cuenta</a>
                 </div>
-
               </div>
-
-
-
             </div>
           </div>
         </div>

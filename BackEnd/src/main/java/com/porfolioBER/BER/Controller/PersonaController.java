@@ -19,44 +19,49 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class PersonaController {
-    @Autowired InterfacePersonaService interfacepersonaService;
+
+    @Autowired
+    InterfacePersonaService interfacepersonaService;
+
     @GetMapping("personas/traer")
-    public List<Persona> getPersona(){
+    public List<Persona> getPersona() {
         return interfacepersonaService.getPersona();
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
-    public String createPersona(@RequestBody Persona persona){
+    public String createPersona(@RequestBody Persona persona) {
         interfacepersonaService.savePersona(persona);
         return "creado";
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/eliminar/(id)")
-    public String deletePersona(@PathVariable Long id){
+    public String deletePersona(@PathVariable Long id) {
         interfacepersonaService.deletePersona(id);
         return "eliminado";
-    }  
+    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/personas/editar/(id)")
     public Persona editPersona(@PathVariable Long id,
-                            @RequestParam("nombre") String nuevoNombre,
-                            @RequestParam("apellido") String nuevoApellido,
-                            @RequestParam("img") String nuevoImg,
-                            @RequestParam("titulo") String nuevoTitulo) {
+            @RequestParam("nombre") String nuevoNombre,
+            @RequestParam("apellido") String nuevoApellido,
+            @RequestParam("img") String nuevoImg,
+            @RequestParam("titulo") String nuevoTitulo,
+            @RequestParam("nacion") String nuevoNacion) {
         Persona persona = interfacepersonaService.findPersona(id);
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
         persona.setImg(nuevoImg);
         persona.setTitulo(nuevoTitulo);
+        persona.setNacion(nuevoNacion);
         interfacepersonaService.savePersona(persona);
         return persona;
-    }  
-    
+    }
+
     @GetMapping("/personas/traer/perfil")
-    public Persona findPersona(){
-        return interfacepersonaService.findPersona((long)1);
+    public Persona findPersona() {
+        return interfacepersonaService.findPersona((long) 1);
     }
 }

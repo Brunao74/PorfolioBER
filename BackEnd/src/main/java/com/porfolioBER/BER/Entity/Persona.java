@@ -9,33 +9,32 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
 public class Persona {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @NotNull
     @Size(min = 1, max = 60, message = "error")
     private String nombre;
-    
+
     @NotNull
     @Size(min = 1, max = 60, message = "error")
     private String apellido;
-    
+
     @Size(min = 1, max = 160)
     private String img;
-    
-   @Size(min = 1, max = 160)
+
+    @Size(min = 1, max = 160)
     private String titulo;
+
+    @Size(min = 1, max = 160)
+    private String nacion;
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -70,5 +69,12 @@ public class Persona {
         this.titulo = titulo;
     }
 
- 
+    public String getNacion() {
+        return nacion;
+    }
+
+    public void setNacion(String nacion) {
+        this.nacion = nacion;
+    }
+
 }

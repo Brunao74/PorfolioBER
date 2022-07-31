@@ -1,6 +1,5 @@
 package com.porfolioBER.BER.Security.Entity;
 
-
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -16,6 +15,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,10 +27,10 @@ public class Usuario {
     @NotNull
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
-    
-      public Usuario() {
+
+    public Usuario() {
     }
 
     public Usuario(String nombre, String nombreUsuario, String password) {
@@ -38,8 +38,7 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
         this.password = password;
     }
-    
-    
+
     public int getId() {
         return id;
     }
@@ -80,4 +79,3 @@ public class Usuario {
         this.roles = roles;
     }
 }
-    
