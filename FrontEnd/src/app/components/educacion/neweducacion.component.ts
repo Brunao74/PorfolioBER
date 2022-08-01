@@ -8,7 +8,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
   templateUrl: './neweducacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
-export class NewEducacionComponent implements OnInit {
+export class NeweducacionComponent implements OnInit {
   titulo: string = '';
   instituto: string = '';
   descripcionE: string = '';
@@ -22,7 +22,7 @@ export class NewEducacionComponent implements OnInit {
 
   onCreate(): void {
     const expe = new Educacion(this.titulo, this.descripcionE, this.anioinicio, this.aniofin, this.instituto);
-    this.sExperiencia.save(expe).subscribe(
+    this.sEducacion.save(expe).subscribe(
       data => {
         alert("Experiencia añadida");
         this.router.navigate(['']);

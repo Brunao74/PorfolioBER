@@ -4,9 +4,9 @@ import { Proyects } from 'src/app/model/proyects';
 import { ProyectsService } from 'src/app/service/proyects.service';
 
 @Component({
-  selector: 'app-editproyects',
-  templateUrl: './editproyects.component.html',
-  styleUrls: ['./editproyects.component.css']
+  selector: 'app-proyect',
+  templateUrl: './proyect.component.html',
+  styleUrls: ['./proyect.component.css']
 })
 export class EditproyectsComponent implements OnInit {
   proyects: Proyects = null;

@@ -1,43 +1,46 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
-  selector: 'app-neweducacion',
-  emplateUrl: './educacion.component.html',
+  selector: 'app-educacion',
+  templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
-export class EditeducacionComponent implements OnInit {
-  educacion: Educacion = null;
+export class EducacionComponent implements OnInit {
+  educacion: Educacion[] = [];
 
-  constructor(
-    private educacionS: EducacionService,
-    private activatedRouter: ActivatedRoute,
-    private router: Router
-  ) { }
+  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.educacionS.detail(id).subscribe(
-      data => {
+    this.cargarEducacion();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  cargarEducacion(): void{
+    this.educacionS.lista().subscribe(
+      data =>{
         this.educacion = data;
-      }, err => {
-        alert("Error al modificar");
-        this.router.navigate(['']);
       }
     )
   }
 
-  onUpdate(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.educacionS.update(id, this.educacion).subscribe(
-      data => {
-        this.router.navigate(['']);
-      }, err => {
-        alert("Error al modificar");
-        this.router.navigate(['']);
-      }
-    )
+  delete(id?: number){
+    if( id != undefined){
+      this.educacionS.delete(id).subscribe(
+        data => {
+          this.cargarEducacion();
+        }, err => {
+          alert("No se pudo eliminar");
+        }
+      )
+    }
   }
 }

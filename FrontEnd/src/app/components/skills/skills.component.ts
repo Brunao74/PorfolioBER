@@ -4,9 +4,9 @@ import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
-  selector: 'app-editskills',
-  templateUrl: './editskills.component.html',
-  styleUrls: ['./editskills.component.css']
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.css']
 })
 export class EditskillsComponent implements OnInit {
   skills: Skills = null;
